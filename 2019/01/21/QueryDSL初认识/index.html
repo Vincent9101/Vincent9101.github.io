@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="TCP/IP,">
+  <meta name="keywords" content="java,">
 
 
 
@@ -79,22 +79,18 @@
 
 
 
-<meta name="description" content="第三章 IP：网际协议概念 不可靠：不能保证IP数据能成功抵达目的地。IP仅提供最好的传输服务，若发生错误，比如：某个路由器暂时用完了缓冲区，IP有一个简单的错误处理算法：丢弃数据报，然后发送ICMP消息报给信源端，任何要求的可靠性只能有上层提供（比如TCP）。  无连接：IP不维护后续数据报的状态消息，每个数据报的处理是相互独立的。这也说明了IP数据报可以不按顺序发送接收。若信源向相同的信宿发送">
-<meta name="keywords" content="TCP&#x2F;IP">
+<meta name="description" content="QueryDSL查询框架初认识&amp;ensp;&amp;ensp;QueryDSL是一个通用的查询框架，通过JavaAPI方式构建安全的SQL查询，也可以用到NoSql数据库中，QueryDSL查询框架可以支持ORM框架或者SQL平台上以一种通用的API方式构建SQL。目前QueryDSL支持的平台有JPA，JDO，SQL,JavaCollections,RDF，MongoDB等。   QueryDSL优势">
+<meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TCP&#x2F;IP学习笔记（3）">
-<meta property="og:url" content="http://bloger.top/2018/09/28/TCP_IP学习笔记（3）/index.html">
+<meta property="og:title" content="QueryDSL查询框架">
+<meta property="og:url" content="http://bloger.top/2019/01/21/QueryDSL初认识/index.html">
 <meta property="og:site_name" content="Vincent">
-<meta property="og:description" content="第三章 IP：网际协议概念 不可靠：不能保证IP数据能成功抵达目的地。IP仅提供最好的传输服务，若发生错误，比如：某个路由器暂时用完了缓冲区，IP有一个简单的错误处理算法：丢弃数据报，然后发送ICMP消息报给信源端，任何要求的可靠性只能有上层提供（比如TCP）。  无连接：IP不维护后续数据报的状态消息，每个数据报的处理是相互独立的。这也说明了IP数据报可以不按顺序发送接收。若信源向相同的信宿发送">
+<meta property="og:description" content="QueryDSL查询框架初认识&amp;ensp;&amp;ensp;QueryDSL是一个通用的查询框架，通过JavaAPI方式构建安全的SQL查询，也可以用到NoSql数据库中，QueryDSL查询框架可以支持ORM框架或者SQL平台上以一种通用的API方式构建SQL。目前QueryDSL支持的平台有JPA，JDO，SQL,JavaCollections,RDF，MongoDB等。   QueryDSL优势">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://docs.52im.net/extend/docs/book/tcpip/vol1/3/images2/52im_1.png">
-<meta property="og:image" content="http://docs.52im.net/extend/docs/book/tcpip/vol1/3/images2/52im_2.png">
-<meta property="og:image" content="http://docs.52im.net/extend/docs/book/tcpip/vol1/3/images2/52im_9.png">
-<meta property="og:updated_time" content="2018-09-28T11:45:29.926Z">
+<meta property="og:updated_time" content="2019-01-22T03:04:31.864Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TCP&#x2F;IP学习笔记（3）">
-<meta name="twitter:description" content="第三章 IP：网际协议概念 不可靠：不能保证IP数据能成功抵达目的地。IP仅提供最好的传输服务，若发生错误，比如：某个路由器暂时用完了缓冲区，IP有一个简单的错误处理算法：丢弃数据报，然后发送ICMP消息报给信源端，任何要求的可靠性只能有上层提供（比如TCP）。  无连接：IP不维护后续数据报的状态消息，每个数据报的处理是相互独立的。这也说明了IP数据报可以不按顺序发送接收。若信源向相同的信宿发送">
-<meta name="twitter:image" content="http://docs.52im.net/extend/docs/book/tcpip/vol1/3/images2/52im_1.png">
+<meta name="twitter:title" content="QueryDSL查询框架">
+<meta name="twitter:description" content="QueryDSL查询框架初认识&amp;ensp;&amp;ensp;QueryDSL是一个通用的查询框架，通过JavaAPI方式构建安全的SQL查询，也可以用到NoSql数据库中，QueryDSL查询框架可以支持ORM框架或者SQL平台上以一种通用的API方式构建SQL。目前QueryDSL支持的平台有JPA，JDO，SQL,JavaCollections,RDF，MongoDB等。   QueryDSL优势">
 
 
 
@@ -124,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://bloger.top/2018/09/28/TCP_IP学习笔记（3）/">
+  <link rel="canonical" href="http://bloger.top/2019/01/21/QueryDSL初认识/">
 
 
 
 
 
-  <title>TCP/IP学习笔记（3） | Vincent</title>
+  <title>QueryDSL查询框架 | Vincent</title>
   
 
 
@@ -257,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://bloger.top/2018/09/28/TCP_IP学习笔记（3）/">
+    <link itemprop="mainEntityOfPage" href="http://bloger.top/2019/01/21/QueryDSL初认识/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Vincent">
@@ -274,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">TCP/IP学习笔记（3）</h1>
+          <h1 class="post-title" itemprop="name headline">QueryDSL查询框架</h1>
         
 
         <div class="post-meta">
@@ -286,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-28T22:11:28+08:00">
-                2018-09-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-21T18:45:51+08:00">
+                2019-01-21
               </time>
             
 
@@ -296,6 +292,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/article/" itemprop="url" rel="index">
+                    <span itemprop="name">article</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -324,47 +342,14 @@
       
 
       
-        <h1 id="第三章-IP：网际协议"><a href="#第三章-IP：网际协议" class="headerlink" title="第三章 IP：网际协议"></a>第三章 IP：网际协议</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
-<li><p><strong>不可靠</strong>：不能保证IP数据能成功抵达目的地。IP仅提供最好的传输服务，若发生错误，比如：某个路由器暂时用完了缓冲区，IP有一个简单的错误处理算法：丢弃数据报，然后发送ICMP消息报给信源端，任何要求的可靠性只能有上层提供（比如TCP）。</p>
-</li>
-<li><p><strong>无连接</strong>：IP不维护后续数据报的状态消息，每个数据报的处理是相互独立的。这也说明了IP数据报可以不按顺序发送接收。若信源向相同的信宿发送两个数据报，由于数据报独立传输，可能是不同的路由，先到达宿主的可能是之前后传输的数据报 。</p>
-</li>
-</ul>
-<h2 id="IP首部"><a href="#IP首部" class="headerlink" title="IP首部"></a>IP首部</h2><p>IP首部一般为20个字节（可以含有选项字段，即大于20字节）  </p>
-<p><img src="http://docs.52im.net/extend/docs/book/tcpip/vol1/3/images2/52im_1.png" alt=""> </p>
-<p>图中高位在左，4个字节的32bit值传输次序：0~7bit，8~15bit,16~23bit,24~31bit,该次序称为big endian字节序，由于TCP/IP首部中的所有二进制整数在网络中都是这种次序，又称为网络字节序。  </p>
-<ul>
-<li><p><strong>4位版本</strong>：协议版本</p>
-</li>
-<li><p><strong>首部长度</strong>：限制首部长度大小，可以使60字节。</p>
-</li>
-<li><p><strong>服务类型（TOS）</strong>：包括3bit的优先权字段（已经忽略），4bit的TOS字段，1bit未用位（必须置0），TOS四位表示：最小时延，最大吞吐量，最高可靠性，最小费用，4bit中只能置1bit，全为0为一般服务，以下是不同TOS的特性：<br><img src="http://docs.52im.net/extend/docs/book/tcpip/vol1/3/images2/52im_2.png" alt="">  </p>
-<ul>
-<li>Telnet和Relogin这俩交互应用要求最小的传输时延</li>
-<li>FTP要求最大吞吐量</li>
-<li>SNMP（网络管理）和路由选择协议要求最高可靠性</li>
-<li>Usernet news ，NNTP（用户网络新闻协议）要求最小费用</li>
-</ul>
-</li>
-<li><strong>总长度</strong>：IP数据报的长度。</li>
-<li><strong>标识字段</strong>：标识主机发送的每份数据报，通常发送一份就会进行加一操作。</li>
-<li><strong>TTL（time-to-live）</strong>：生存时间设置了数据可以经过的最多路由器数，制定了数据报的生存时间，一旦经过一个处理他的路由器就会减去1，为0的时候数据报就会被丢弃，并发送ICMP报文通知源主机。</li>
-<li><strong>协议字段</strong>：用于识别是什么协议向IP发数据。</li>
-<li><strong>首部检验和</strong>：根据IP计算的首部检验和码。</li>
-</ul>
-<h2 id="IP路由选择"><a href="#IP路由选择" class="headerlink" title="IP路由选择"></a>IP路由选择</h2><p>一般来说若目的主机和源主机直接相连，在一个局域网，则数据报直接送到目的主机，否则主机的数据发送在默认的路由器上，路由器转发数据报。</p>
-<p>一般体制中，IP可以从TCP、UDP、ICMP和IGMP（本地生成的数据报）接收数据报并进行发送，或者从一个网络接口接收数据报进行发送（转发）。</p>
-<p>IP内存中有一个路由表，一旦收到数据报进行发送的时候，就会搜索路由表，当数据来自<strong>网络接口</strong>时，IP层会检测目的IP地址是否为本机的IP地址之一或者IP广播地址，若是，数据报就会送入IP首部协议所指定的协议模块进行处理，否则，检测IP层是否设置了路由器功能，若没有则丢弃数据，若有则进行转发。</p>
-<p>IP路由选择完成的功能如下：</p>
-<ul>
-<li>搜索路由表，寻找能与<strong>目的IP地址完全匹配</strong>的表目（网络号和主机号都要匹配）。如果找到，则把报文发送给该表目指定的下一站路由器或直接连接的网络接口（取决于标志字段的值）。</li>
-<li>搜索路由表，寻找能与目的<strong>网络号相匹配</strong>的表目。如果找到，则把报文发送给该表目指定的下一站路由器或直接连接的网络接口（取决于标志字段的值）。目的网络上的所有主机都可以通过这个表目来处置。例如，一个以太网上的所有主机都是通过这种表目进行寻径的。这种搜索网络的匹配方法必须考虑可能的子网掩码。关于这一点我们在下一节中进行讨论。</li>
-<li>搜索路由表，寻找标为“<strong>默认default</strong>”的表目。如果找到，则把报文发送给该表目指定的下一站路由器。如果上面这些步骤都没有成功，那么该数据报就不能被传送。</li>
-</ul>
-<h2 id="子网寻址"><a href="#子网寻址" class="headerlink" title="子网寻址"></a>子网寻址</h2><p>IP地址分网络号和主机号，现在就是把主机号再看成是一个子网号和主机号。</p>
-<h2 id="子网掩码"><a href="#子网掩码" class="headerlink" title="子网掩码"></a>子网掩码</h2><p>用于区分子网号与主机号的界限。</p>
-<h2 id="特殊情况的IP地址"><a href="#特殊情况的IP地址" class="headerlink" title="特殊情况的IP地址"></a>特殊情况的IP地址</h2><p><img src="http://docs.52im.net/extend/docs/book/tcpip/vol1/3/images2/52im_9.png" alt=""><br>这个表可以分成三个部分。表的头两项是特殊的源地址，中间项是特殊的环回地址，最后四项是广播地址。</p>
-<p>表中的头两项，网络号为0，如主机使用BOOTP协议确定本机IP地址时只能作为初始化过程中的源地址出现。</p>
+        <h1 id="QueryDSL查询框架初认识"><a href="#QueryDSL查询框架初认识" class="headerlink" title="QueryDSL查询框架初认识"></a>QueryDSL查询框架初认识</h1><p>&ensp;&ensp;QueryDSL是一个通用的查询框架，通过JavaAPI方式构建安全的SQL查询，也可以用到NoSql数据库中，QueryDSL查询框架可以支持ORM框架或者SQL平台上以一种通用的API方式构建SQL。目前QueryDSL支持的平台有JPA，JDO，SQL,JavaCollections,RDF，MongoDB等。  </p>
+<h2 id="QueryDSL优势"><a href="#QueryDSL优势" class="headerlink" title="QueryDSL优势"></a>QueryDSL优势</h2><ol>
+<li>Querydsl支持代码自动完成，因为才纯Java API编写查询，因此主流Java IDE对起的代码自动完成功能支持几乎可以发挥到极致（因为是纯Java代码，所以支持很好） </li>
+<li>Querydsl几乎可以避免所有的SQL语法错误（当然用错了Querydsl API除外，因为不写SQL了，因此想用错也难） </li>
+<li>Querydsl采用Domain类型的对象和属性来构建查询，因此查询绝对是类型安全的，不会因为条件类型而出现问题 </li>
+<li>Querydsl采用纯Java API的作为SQL构建的实现可以让代码重构发挥到另一个高度</li>
+<li>Querydsl的领一个优势就是可以更轻松的进行增量查询的定义 </li>
+</ol>
 
       
     </div>
@@ -382,7 +367,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/TCP-IP/" rel="tag"># TCP/IP</a>
+            <a href="/tags/java/" rel="tag"># java</a>
           
         </div>
       
@@ -395,8 +380,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/27/TCP_IP学习笔记（1）/" rel="next" title="TCP/IP学习笔记（1）">
-                <i class="fa fa-chevron-left"></i> TCP/IP学习笔记（1）
+              <a href="/2018/10/24/java虚拟机（1）/" rel="next" title="java虚拟机运行数据区域">
+                <i class="fa fa-chevron-left"></i> java虚拟机运行数据区域
               </a>
             
           </div>
@@ -404,10 +389,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/28/TCP_IP学习笔记（4）/" rel="prev" title="TCP/IP学习笔记（4）">
-                TCP/IP学习笔记（4） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -557,7 +538,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章-IP：网际协议"><span class="nav-number">1.</span> <span class="nav-text">第三章 IP：网际协议</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">1.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IP首部"><span class="nav-number">1.2.</span> <span class="nav-text">IP首部</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IP路由选择"><span class="nav-number">1.3.</span> <span class="nav-text">IP路由选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子网寻址"><span class="nav-number">1.4.</span> <span class="nav-text">子网寻址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子网掩码"><span class="nav-number">1.5.</span> <span class="nav-text">子网掩码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊情况的IP地址"><span class="nav-number">1.6.</span> <span class="nav-text">特殊情况的IP地址</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#QueryDSL查询框架初认识"><span class="nav-number">1.</span> <span class="nav-text">QueryDSL查询框架初认识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#QueryDSL优势"><span class="nav-number">1.1.</span> <span class="nav-text">QueryDSL优势</span></a></li></ol></li></ol></div>
             
 
           </div>
