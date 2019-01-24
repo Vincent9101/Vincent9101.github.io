@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="java,">
+  <meta name="keywords" content="SpringBoot,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="web应用应用中URL中的路径问题 ①在设置页面路径的时候设置一定要用contextPath（可以通过application.getContextPath（）获得）进行拼接，不然会有可能出现路径错误的问题，这是由于在不同的位置”/“符号会有不同的意思。  ②JavaWeb中“/”符号有时候会有时会是站点的根目录，有时候表示当前web应用的根目录，  当该路径交由servlet容器处理的时候就是当前">
-<meta name="keywords" content="java">
+<meta name="description" content="SpringBoot web项目打包坑= =这两天写一个项目需要把SpingBoot的web项目打包部署，然而打包的war和jar神特么居然访问不了里面的资源，相当懵逼，折腾了我一两天，找来找去才发现解决方案。123456789101112131415161718192021222324252627&amp;lt;build&amp;gt;     &amp;lt;finalName&amp;gt;project_name&amp;lt">
+<meta name="keywords" content="SpringBoot">
 <meta property="og:type" content="article">
-<meta property="og:title" content="javaweb学习笔记二">
-<meta property="og:url" content="http://bloger.top/2018/08/27/javaweb学习笔记二/index.html">
+<meta property="og:title" content="SpringBoot打包问题">
+<meta property="og:url" content="http://bloger.top/2019/01/24/SpringBoot打包问题/index.html">
 <meta property="og:site_name" content="Vincent">
-<meta property="og:description" content="web应用应用中URL中的路径问题 ①在设置页面路径的时候设置一定要用contextPath（可以通过application.getContextPath（）获得）进行拼接，不然会有可能出现路径错误的问题，这是由于在不同的位置”/“符号会有不同的意思。  ②JavaWeb中“/”符号有时候会有时会是站点的根目录，有时候表示当前web应用的根目录，  当该路径交由servlet容器处理的时候就是当前">
+<meta property="og:description" content="SpringBoot web项目打包坑= =这两天写一个项目需要把SpingBoot的web项目打包部署，然而打包的war和jar神特么居然访问不了里面的资源，相当懵逼，折腾了我一两天，找来找去才发现解决方案。123456789101112131415161718192021222324252627&amp;lt;build&amp;gt;     &amp;lt;finalName&amp;gt;project_name&amp;lt">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-07T09:53:58.448Z">
+<meta property="og:updated_time" content="2019-01-24T05:01:03.657Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javaweb学习笔记二">
-<meta name="twitter:description" content="web应用应用中URL中的路径问题 ①在设置页面路径的时候设置一定要用contextPath（可以通过application.getContextPath（）获得）进行拼接，不然会有可能出现路径错误的问题，这是由于在不同的位置”/“符号会有不同的意思。  ②JavaWeb中“/”符号有时候会有时会是站点的根目录，有时候表示当前web应用的根目录，  当该路径交由servlet容器处理的时候就是当前">
+<meta name="twitter:title" content="SpringBoot打包问题">
+<meta name="twitter:description" content="SpringBoot web项目打包坑= =这两天写一个项目需要把SpingBoot的web项目打包部署，然而打包的war和jar神特么居然访问不了里面的资源，相当懵逼，折腾了我一两天，找来找去才发现解决方案。123456789101112131415161718192021222324252627&amp;lt;build&amp;gt;     &amp;lt;finalName&amp;gt;project_name&amp;lt">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://bloger.top/2018/08/27/javaweb学习笔记二/">
+  <link rel="canonical" href="http://bloger.top/2019/01/24/SpringBoot打包问题/">
 
 
 
 
 
-  <title>javaweb学习笔记二 | Vincent</title>
+  <title>SpringBoot打包问题 | Vincent</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://bloger.top/2018/08/27/javaweb学习笔记二/">
+    <link itemprop="mainEntityOfPage" href="http://bloger.top/2019/01/24/SpringBoot打包问题/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Vincent">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">javaweb学习笔记二</h1>
+          <h1 class="post-title" itemprop="name headline">SpringBoot打包问题</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-27T08:40:33+08:00">
-                2018-08-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-24T12:52:26+08:00">
+                2019-01-24
               </time>
             
 
@@ -292,6 +292,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/note/" itemprop="url" rel="index">
+                    <span itemprop="name">note</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -320,26 +342,7 @@
       
 
       
-        <h2 id="web应用应用中URL中的路径问题"><a href="#web应用应用中URL中的路径问题" class="headerlink" title="web应用应用中URL中的路径问题"></a>web应用应用中URL中的路径问题</h2><ul>
-<li><p>①在设置页面路径的时候设置一定要用contextPath（可以通过application.getContextPath（）获得）进行拼接，不然会有可能出现路径错误的问题，这是由于在不同的位置”/“符号会有不同的意思。</p>
-</li>
-<li><p>②JavaWeb中“/”符号有时候会有时会是站点的根目录，有时候表示当前web应用的根目录，</p>
-<blockquote>
-<p><strong>当该路径交由servlet容器处理的时候就是当前web应用的根目录，当该路径交由浏览器处理的时候就是该站点的根目录</strong><br><strong><em><a href="http://localhost:8080/" target="_blank" rel="noopener">http://localhost:8080/</a></em></strong>MVC/first.jsp :其中斜体加粗部分就是站点根目录。</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="重复提交问题"><a href="#重复提交问题" class="headerlink" title="重复提交问题"></a>重复提交问题</h2><p>（1）使用重定向解决重复提交问题</p>
-<ul>
-<li>当表单提交到一个servlet，然后servlet又用<strong><em>请求转发</em></strong>的方式到了另外一个页面，此时浏览器上的路径还是servlet 的路径，如果点击了刷新的时候就会进行重复提交。<blockquote>
-<p>重复提交是会使服务器的负担变大，因此当需要用servlet相应页面的时候如果没有使用的其request对象的必要时，应当使用重定向。</p>
-</blockquote>
-</li>
-</ul>
-<p>（2）使用session与request结合解决重复提交问题</p>
-<ul>
-<li>在原表单生成一个随机值作为标记，然后把该值放在session的属性中，并放在隐藏域中提交到后台，在后台中获取session该属性比较隐藏域的值，若一样则说明不是重复提交，然后在session中把该值删除。</li>
-</ul>
+        <h1 id="SpringBoot-web项目打包坑"><a href="#SpringBoot-web项目打包坑" class="headerlink" title="SpringBoot web项目打包坑= ="></a>SpringBoot web项目打包坑= =</h1><p>这两天写一个项目需要把SpingBoot的web项目打包部署，然而打包的war和jar神特么居然访问不了里面的资源，相当懵逼，折腾了我一两天，找来找去才发现解决方案。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">finalName</span>&gt;</span>project_name<span class="tag">&lt;/<span class="name">finalName</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">directory</span>&gt;</span>$&#123;basedir&#125;/src/main/webapp<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">targetPath</span>&gt;</span>META-INF/resources<span class="tag">&lt;/<span class="name">targetPath</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">includes</span>&gt;</span></span><br><span class="line">                 <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/**<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;/<span class="name">includes</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/resources<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">filtering</span>&gt;</span>false<span class="tag">&lt;/<span class="name">filtering</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">includes</span>&gt;</span></span><br><span class="line">                 <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/**<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;/<span class="name">includes</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.4.2.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -357,7 +360,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/java/" rel="tag"># java</a>
+            <a href="/tags/SpringBoot/" rel="tag"># SpringBoot</a>
           
         </div>
       
@@ -370,8 +373,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/27/浅谈java中的i=i++/" rel="next" title="浅谈java中的i=i++">
-                <i class="fa fa-chevron-left"></i> 浅谈java中的i=i++
+              <a href="/2019/01/21/QueryDSL初认识/" rel="next" title="QueryDSL查询框架">
+                <i class="fa fa-chevron-left"></i> QueryDSL查询框架
               </a>
             
           </div>
@@ -379,10 +382,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/27/javaweb（httpsession与coockie）学习笔记一/" rel="prev" title="javaweb（httpsession与coockie）学习笔记一">
-                javaweb（httpsession与coockie）学习笔记一 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -532,7 +531,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#web应用应用中URL中的路径问题"><span class="nav-number">1.</span> <span class="nav-text">web应用应用中URL中的路径问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重复提交问题"><span class="nav-number">2.</span> <span class="nav-text">重复提交问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringBoot-web项目打包坑"><span class="nav-number">1.</span> <span class="nav-text">SpringBoot web项目打包坑= =</span></a></li></ol></div>
             
 
           </div>
