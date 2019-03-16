@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Vincent">
 <meta property="og:description" content="Dagger2概念介绍为什么需要依赖注入？基于控制反转概念的依赖注入。这说明一个类应该从外部获得它的依赖。简单来说，没有类应该实例化另一个类，但应该从配置类中获取实例。列如java类通过new运算符创建另一个类的实例，则它不能独立该类使用和测试，即硬依赖。 从类外部提供依赖有什么好处呢？增加了重用类的可能性，且能独立于其它类测试它们。 如何实现DI(依赖注入)？一个名为依赖容器的框架类用于分析类的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-16T09:38:01.125Z">
+<meta property="og:updated_time" content="2019-03-16T13:31:33.598Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简说Dagger2">
 <meta name="twitter:description" content="Dagger2概念介绍为什么需要依赖注入？基于控制反转概念的依赖注入。这说明一个类应该从外部获得它的依赖。简单来说，没有类应该实例化另一个类，但应该从配置类中获取实例。列如java类通过new运算符创建另一个类的实例，则它不能独立该类使用和测试，即硬依赖。 从类外部提供依赖有什么好处呢？增加了重用类的可能性，且能独立于其它类测试它们。 如何实现DI(依赖注入)？一个名为依赖容器的框架类用于分析类的">
@@ -348,7 +348,9 @@
 <ol>
 <li><strong>依赖提供程序</strong>：带有注释的类@Module负责提供可以注入的对象。这些类定义了注释的方法@Provides。这些方法返回的对象可用于依赖注入。  </li>
 <li><strong>依赖消费</strong>：该@Inject注解用于定义的依赖。  </li>
-<li><strong>连接消费者和生产者</strong>：甲@Component注释的接口定义对象（模块）和表达的依赖关系的对象的提供者之间的连接。此连接的类由Dagger生成。<h2 id="Dagger的不足"><a href="#Dagger的不足" class="headerlink" title="Dagger的不足"></a>Dagger的不足</h2></li>
+<li><strong>连接消费者和生产者</strong>：@Component注释的接口定义对象（模块）和表达的依赖关系的对象的提供者之间的连接。此连接的类由Dagger生成。  </li>
+</ol>
+<h2 id="Dagger的不足"><a href="#Dagger的不足" class="headerlink" title="Dagger的不足"></a>Dagger的不足</h2><ol>
 <li>Dagger不会自动注入字段。</li>
 <li>不能注入私有字段。</li>
 <li>使用字段注入，必须在带@Component注释的接口中定义一个方法，该方法接受要注入成员变量的类的实例。</li>
