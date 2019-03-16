@@ -87,12 +87,12 @@
 <meta property="og:site_name" content="Vincent">
 <meta property="og:description" content="什么是MVP(Model-View-Presenter)设计模式MVP设计模式是一组指导原则，如果遵循这些指导原则，则将代码解耦为可重用性和可测试性。它根据应用程序组件的角色划分应用程序组件，称为关注点分离。MVP将应用程序划分为三个基本组件：  模型：它负责处理应用程序的数据部分。 视图：它负责在屏幕上显示具有特定数据的视图。 演示者：它是连接模型和视图的桥梁。它还充当View的讲师。  MVP">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://raw.githubusercontent.com/Vincent9101/Vincent9101.github.io/HEXO/source/images/MVP_architecture.png">
-<meta property="og:updated_time" content="2019-03-16T03:39:06.169Z">
+<meta property="og:image" content="https://github.com/Vincent9101/Vincent9101.github.io/blob/HEXO/source/images/MVP_architecture.png?raw=true">
+<meta property="og:updated_time" content="2019-03-16T07:07:22.754Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android_MVP架构">
 <meta name="twitter:description" content="什么是MVP(Model-View-Presenter)设计模式MVP设计模式是一组指导原则，如果遵循这些指导原则，则将代码解耦为可重用性和可测试性。它根据应用程序组件的角色划分应用程序组件，称为关注点分离。MVP将应用程序划分为三个基本组件：  模型：它负责处理应用程序的数据部分。 视图：它负责在屏幕上显示具有特定数据的视图。 演示者：它是连接模型和视图的桥梁。它还充当View的讲师。  MVP">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/Vincent9101/Vincent9101.github.io/HEXO/source/images/MVP_architecture.png">
+<meta name="twitter:image" content="https://github.com/Vincent9101/Vincent9101.github.io/blob/HEXO/source/images/MVP_architecture.png?raw=true">
 
 
 
@@ -351,11 +351,13 @@
 <li>演示者：它是连接模型和视图的桥梁。它还充当View的讲师。</li>
 </ul>
 <h2 id="MVP为上述组件提供了一些基本规则，如下所示："><a href="#MVP为上述组件提供了一些基本规则，如下所示：" class="headerlink" title="MVP为上述组件提供了一些基本规则，如下所示："></a>MVP为上述组件提供了一些<strong>基本规则</strong>，如下所示：</h2><ol>
-<li>View的唯一责任是按照Presenter的指示绘制UI。这是应用程序的一个愚蠢部分。</li>
+<li>View的唯一责任是按照Presenter的指示绘制UI。这是应用程序愚蠢的地方。</li>
 <li>View将所有用户交互委派给其Presenter。</li>
 <li>View永远不会直接与Model通信。</li>
 <li>Presenter负责将View的要求委派给Model，并指示View对特定事件的操作。</li>
-<li>Model负责从服务器，数据库和文件系统中获取数据。  <h2 id="于是，MVP一个个是这样的："><a href="#于是，MVP一个个是这样的：" class="headerlink" title="于是，MVP一个个是这样的："></a>于是，MVP一个个是这样的：</h2></li>
+<li>Model负责从服务器，数据库和文件系统中获取数据。  </li>
+</ol>
+<h2 id="于是，MVP应该是这样的："><a href="#于是，MVP应该是这样的：" class="headerlink" title="于是，MVP应该是这样的："></a>于是，MVP应该是这样的：</h2><ol>
 <li>Activity，Fragment和CustomView充当应用程序的View部分。</li>
 <li>每个View都有一对一的Presenter关系。</li>
 <li>View通过接口与其Presenter通信，反之亦然。</li>
@@ -364,7 +366,25 @@
 <li>DataManager仅在被询问时使用。</li>
 <li>演示者无法访问任何Android的api。</li>
 </ol>
-<h2 id="细说架构"><a href="#细说架构" class="headerlink" title="细说架构"></a>细说架构</h2><p><img src="https://raw.githubusercontent.com/Vincent9101/Vincent9101.github.io/HEXO/source/images/MVP_architecture.png" alt="MVP架构"></p>
+<h2 id="细说架构"><a href="#细说架构" class="headerlink" title="细说架构"></a>细说架构</h2><p><img src="https://github.com/Vincent9101/Vincent9101.github.io/blob/HEXO/source/images/MVP_architecture.png?raw=true" alt="MVP架构">  </p>
+<ul>
+<li>View:应用程序的一部分呈现UI并接收来自用户的交互。Activity，Fragment和CustomView构成了这一部分。</li>
+<li>MVPView（interface）:它是一个由View实现的接口。它包含暴露给其Presenter进行通信的方法。</li>
+<li>Presenter: 它是View的决策对象，是一个纯java类，无法访问Android API。它接收从其View传递的用户交互，然后根据业务逻辑做出决策，最后指示View执行特定操作。它还与DataManager通信，以获取执行业务逻辑所需的任何数据。</li>
+<li>MvpPresenter（interface）：它是一个接口，由Presenter实现。它包含暴露给其通信视图的方法。</li>
+<li>AppDbHelper：数据库管理和与数据库相关的所有数据处理都在应用程序的这一部分完成。</li>
+<li>DbHelper（interface）：它是由AppDbHelper实现的接口，包含暴露给应用程序组件的方法。该层解耦DbHelper的任何特定实现，因此使AppDbHelper成为即插即用单元。</li>
+<li>AppPreferenceHelper：它就像AppDbHelper，但是被赋予了从android共享首选项读取和写入数据的工作。</li>
+<li>PreferenceHelper（interface）：该接口就像DbHelper一样，但是由AppPreferenceHelper实现。</li>
+<li>AppApiHelper：它管理网络API调用和API数据处理。</li>
+<li>ApiHelper：它就像DbHelper一样，但是由AppApiHelper实现。</li>
+<li>DataManager：它是由AppDataManager实现的接口。它包含为所有数据处理操作公开的方法。理想情况下，它会委派所有Helper类提供的服务。对于此DataManager接口，扩展了DbHelper，PreferenceHelper和ApiHelper接口。</li>
+<li>AppDataManager：它是应用程序中任何数据相关操作的一个联系点。DbHelper，PreferenceHelper和ApiHelper仅适用于DataManager。它委派特定于任何Helper的所有操作。<h2 id="架构之间的通信模式"><a href="#架构之间的通信模式" class="headerlink" title="架构之间的通信模式"></a>架构之间的通信模式</h2></li>
+<li>Application类通过传递DbHelper，PreferenceHelper和ApiHelper引用来实例化AppDbHelper（进入DbHelper变量），AppPreferenceHelper（进入PreferenceHelper变量），AppApiHelper（进入ApiHelper变量），最后运行AppDataManager（进入DataManager变量）。</li>
+<li>View组件通过MvpPresenter引用实例化其Presenter。</li>
+<li>Presenter接收它View组件并通过MvpView引用它。Presenter还接收DataManager。</li>
+<li>DataManager作为单例实例存在。</li>
+</ul>
 
       
     </div>
@@ -404,6 +424,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/16/简说Dagger2/" rel="prev" title="简说Dagger2">
+                简说Dagger2 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -482,7 +506,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -504,7 +528,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -553,7 +577,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是MVP-Model-View-Presenter-设计模式"><span class="nav-number">1.</span> <span class="nav-text">什么是MVP(Model-View-Presenter)设计模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MVP为上述组件提供了一些基本规则，如下所示："><span class="nav-number">1.1.</span> <span class="nav-text">MVP为上述组件提供了一些基本规则，如下所示：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#于是，MVP一个个是这样的："><span class="nav-number">1.2.</span> <span class="nav-text">于是，MVP一个个是这样的：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#细说架构"><span class="nav-number">1.3.</span> <span class="nav-text">细说架构</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是MVP-Model-View-Presenter-设计模式"><span class="nav-number">1.</span> <span class="nav-text">什么是MVP(Model-View-Presenter)设计模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MVP为上述组件提供了一些基本规则，如下所示："><span class="nav-number">1.1.</span> <span class="nav-text">MVP为上述组件提供了一些基本规则，如下所示：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#于是，MVP应该是这样的："><span class="nav-number">1.2.</span> <span class="nav-text">于是，MVP应该是这样的：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#细说架构"><span class="nav-number">1.3.</span> <span class="nav-text">细说架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#架构之间的通信模式"><span class="nav-number">1.4.</span> <span class="nav-text">架构之间的通信模式</span></a></li></ol></li></ol></div>
             
 
           </div>
