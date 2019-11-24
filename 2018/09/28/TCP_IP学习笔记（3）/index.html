@@ -6,7 +6,7 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -90,7 +90,7 @@
 <meta property="og:image" content="http://docs.52im.net/extend/docs/book/tcpip/vol1/3/images2/52im_1.png">
 <meta property="og:image" content="http://docs.52im.net/extend/docs/book/tcpip/vol1/3/images2/52im_2.png">
 <meta property="og:image" content="http://docs.52im.net/extend/docs/book/tcpip/vol1/3/images2/52im_9.png">
-<meta property="og:updated_time" content="2018-09-28T11:45:29.926Z">
+<meta property="og:updated_time" content="2018-09-28T11:45:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TCP&#x2F;IP学习笔记（3）">
 <meta name="twitter:description" content="第三章 IP：网际协议概念 不可靠：不能保证IP数据能成功抵达目的地。IP仅提供最好的传输服务，若发生错误，比如：某个路由器暂时用完了缓冲区，IP有一个简单的错误处理算法：丢弃数据报，然后发送ICMP消息报给信源端，任何要求的可靠性只能有上层提供（比如TCP）。  无连接：IP不维护后续数据报的状态消息，每个数据报的处理是相互独立的。这也说明了IP数据报可以不按顺序发送接收。若信源向相同的信宿发送">
@@ -142,7 +142,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -152,7 +152,7 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -252,20 +252,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://bloger.top/2018/09/28/TCP_IP学习笔记（3）/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Vincent">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpeg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Vincent">
     </span>
 
@@ -331,14 +331,14 @@
 </li>
 </ul>
 <h2 id="IP首部"><a href="#IP首部" class="headerlink" title="IP首部"></a>IP首部</h2><p>IP首部一般为20个字节（可以含有选项字段，即大于20字节）  </p>
-<p><img src="http://docs.52im.net/extend/docs/book/tcpip/vol1/3/images2/52im_1.png" alt=""> </p>
+<p><img src="http://docs.52im.net/extend/docs/book/tcpip/vol1/3/images2/52im_1.png" alt> </p>
 <p>图中高位在左，4个字节的32bit值传输次序：0~7bit，8~15bit,16~23bit,24~31bit,该次序称为big endian字节序，由于TCP/IP首部中的所有二进制整数在网络中都是这种次序，又称为网络字节序。  </p>
 <ul>
 <li><p><strong>4位版本</strong>：协议版本</p>
 </li>
 <li><p><strong>首部长度</strong>：限制首部长度大小，可以使60字节。</p>
 </li>
-<li><p><strong>服务类型（TOS）</strong>：包括3bit的优先权字段（已经忽略），4bit的TOS字段，1bit未用位（必须置0），TOS四位表示：最小时延，最大吞吐量，最高可靠性，最小费用，4bit中只能置1bit，全为0为一般服务，以下是不同TOS的特性：<br><img src="http://docs.52im.net/extend/docs/book/tcpip/vol1/3/images2/52im_2.png" alt="">  </p>
+<li><p><strong>服务类型（TOS）</strong>：包括3bit的优先权字段（已经忽略），4bit的TOS字段，1bit未用位（必须置0），TOS四位表示：最小时延，最大吞吐量，最高可靠性，最小费用，4bit中只能置1bit，全为0为一般服务，以下是不同TOS的特性：<br><img src="http://docs.52im.net/extend/docs/book/tcpip/vol1/3/images2/52im_2.png" alt>  </p>
 <ul>
 <li>Telnet和Relogin这俩交互应用要求最小的传输时延</li>
 <li>FTP要求最大吞吐量</li>
@@ -363,7 +363,7 @@
 </ul>
 <h2 id="子网寻址"><a href="#子网寻址" class="headerlink" title="子网寻址"></a>子网寻址</h2><p>IP地址分网络号和主机号，现在就是把主机号再看成是一个子网号和主机号。</p>
 <h2 id="子网掩码"><a href="#子网掩码" class="headerlink" title="子网掩码"></a>子网掩码</h2><p>用于区分子网号与主机号的界限。</p>
-<h2 id="特殊情况的IP地址"><a href="#特殊情况的IP地址" class="headerlink" title="特殊情况的IP地址"></a>特殊情况的IP地址</h2><p><img src="http://docs.52im.net/extend/docs/book/tcpip/vol1/3/images2/52im_9.png" alt=""><br>这个表可以分成三个部分。表的头两项是特殊的源地址，中间项是特殊的环回地址，最后四项是广播地址。</p>
+<h2 id="特殊情况的IP地址"><a href="#特殊情况的IP地址" class="headerlink" title="特殊情况的IP地址"></a>特殊情况的IP地址</h2><p><img src="http://docs.52im.net/extend/docs/book/tcpip/vol1/3/images2/52im_9.png" alt><br>这个表可以分成三个部分。表的头两项是特殊的源地址，中间项是特殊的环回地址，最后四项是广播地址。</p>
 <p>表中的头两项，网络号为0，如主机使用BOOTP协议确定本机IP地址时只能作为初始化过程中的源地址出现。</p>
 
       
@@ -395,8 +395,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/27/TCP_IP学习笔记（2）/" rel="next" title="TCP/IP学习笔记（2）">
-                <i class="fa fa-chevron-left"></i> TCP/IP学习笔记（2）
+              <a href="/2018/09/27/TCP_IP学习笔记（1）/" rel="next" title="TCP/IP学习笔记（1）">
+                <i class="fa fa-chevron-left"></i> TCP/IP学习笔记（1）
               </a>
             
           </div>
@@ -471,7 +471,7 @@
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image" src="/images/avatar.jpeg" alt="Vincent">
             
@@ -486,7 +486,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -508,7 +508,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

@@ -6,7 +6,7 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -92,7 +92,7 @@
 <meta property="og:image" content="http://docs.52im.net/extend/docs/book/tcpip/vol1/2/images2/52im_3.png">
 <meta property="og:image" content="http://docs.52im.net/extend/docs/book/tcpip/vol1/2/images2/52im_4.png">
 <meta property="og:image" content="http://docs.52im.net/extend/docs/book/tcpip/vol1/2/images2/52im_5.png">
-<meta property="og:updated_time" content="2018-09-27T14:17:14.539Z">
+<meta property="og:updated_time" content="2018-09-27T14:17:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TCP&#x2F;IP学习笔记（2）">
 <meta name="twitter:description" content="第二章 链路层链路层目的 为IP模块发送和接收IP数据报； 为ARP模块发送ARP请求和AR应答; 为RARP发送RARP请求和接收RARP应答；    以太网和IEEE 802封装 以太网是当今TCP/IP采用的主要的局域网技术。采用CSMA/CD的媒体介入方法（带有冲突检测的载波侦听多路接入），速率10Mb/s,地址48bit。 下面是数据帧格式          IEEE 802.2/802">
@@ -144,7 +144,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -154,7 +154,7 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -254,20 +254,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://bloger.top/2018/09/27/TCP_IP学习笔记（2）/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Vincent">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.jpeg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Vincent">
     </span>
 
@@ -360,7 +360,7 @@
 <ul>
 <li>在串行链路上封装的IP数据报的方法。既支持数据为8位和误奇偶检验的异步模式，还支持面向比特的同步链接。   </li>
 <li>建立、配置以及测试数据链路的链路控制协议（LCP：Link Control Protocol）。允许通信双方进行协商，以确定不同的选项。</li>
-<li>针对不同网络层协议的网络控制协议（NCP：networlk control protocol） 。例如：IP NCP允许通信双方商定是否对报文首部进行压缩。    - PPP数据各格式：<br><img src="http://docs.52im.net/extend/docs/book/tcpip/vol1/2/images2/52im_3.png" alt="">  </li>
+<li>针对不同网络层协议的网络控制协议（NCP：networlk control protocol） 。例如：IP NCP允许通信双方商定是否对报文首部进行压缩。    - PPP数据各格式：<br><img src="http://docs.52im.net/extend/docs/book/tcpip/vol1/2/images2/52im_3.png" alt>  </li>
 <li><strong>PPP对比SLIP</strong><ul>
 <li>(1)PPP支持在单根串行线路运行多种协议，不只IP协议；</li>
 <li>（2）每一帧都有循环冗余检验；</li>
@@ -369,13 +369,13 @@
 </ul>
 </li>
 </ul>
-<h2 id="环回接口（Loopback-Interface）"><a href="#环回接口（Loopback-Interface）" class="headerlink" title="环回接口（Loopback Interface）"></a>环回接口（Loopback Interface）</h2><p>环回接口用以在同一台主机上的客户程序和服务器程序通过TCP/IP进行通信，A类网络号127就是为环回接口预留的。以下是环回接口处理IP数据报的简单过程：<br><img src="http://docs.52im.net/extend/docs/book/tcpip/vol1/2/images2/52im_4.png" alt=""><br><strong>注意：</strong></p>
+<h2 id="环回接口（Loopback-Interface）"><a href="#环回接口（Loopback-Interface）" class="headerlink" title="环回接口（Loopback Interface）"></a>环回接口（Loopback Interface）</h2><p>环回接口用以在同一台主机上的客户程序和服务器程序通过TCP/IP进行通信，A类网络号127就是为环回接口预留的。以下是环回接口处理IP数据报的简单过程：<br><img src="http://docs.52im.net/extend/docs/book/tcpip/vol1/2/images2/52im_4.png" alt><br><strong>注意：</strong></p>
 <ol>
 <li>传给环回地址（127.0.0.1）的数据均作为IP输入。</li>
 <li>传给广播地址或者多播地址的数据报复制到一份到环回接口，然后送到以太网上，这是由于广播传送和多播传送的定义包含主机本身。</li>
 <li>任何传给该主机IP地址的数据均送到环回接口。</li>
 </ol>
-<h2 id="最大传输单元MTU"><a href="#最大传输单元MTU" class="headerlink" title="最大传输单元MTU"></a>最大传输单元MTU</h2><p>由于以太网对数据帧的长度有一个最大限制。链路层的这个特性称作MTU，<strong>最大传输单元</strong>。<br>因此，如果数据长度大于链路层的MTU，那么IP层就需要把数据报进行分片。一下是一些限制标准：<br><img src="http://docs.52im.net/extend/docs/book/tcpip/vol1/2/images2/52im_5.png" alt="">  </p>
+<h2 id="最大传输单元MTU"><a href="#最大传输单元MTU" class="headerlink" title="最大传输单元MTU"></a>最大传输单元MTU</h2><p>由于以太网对数据帧的长度有一个最大限制。链路层的这个特性称作MTU，<strong>最大传输单元</strong>。<br>因此，如果数据长度大于链路层的MTU，那么IP层就需要把数据报进行分片。一下是一些限制标准：<br><img src="http://docs.52im.net/extend/docs/book/tcpip/vol1/2/images2/52im_5.png" alt>  </p>
 <h2 id="路径MTU"><a href="#路径MTU" class="headerlink" title="路径MTU"></a>路径MTU</h2><ul>
 <li>同一个网络上的不同主机进行通信，该<strong>网络</strong>的MTU是很重要的。如果<strong>不同</strong>网络之间的主机通信，重要的就是主机路径中的最小MTU，即路径MTU。</li>
 <li>主机之间的MTU不一定是一个<strong>常数</strong>，取决于当时选择的路由，而选路不一定是对称的，因此路径MTU两个方向也不一定一样。</li>
@@ -411,8 +411,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/27/TCP_IP学习笔记（1）/" rel="next" title="TCP/IP学习笔记（1）">
-                <i class="fa fa-chevron-left"></i> TCP/IP学习笔记（1）
+              <a href="/2018/09/20/浅谈websocket/" rel="next" title="浅谈websocket">
+                <i class="fa fa-chevron-left"></i> 浅谈websocket
               </a>
             
           </div>
@@ -421,8 +421,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/28/TCP_IP学习笔记（3）/" rel="prev" title="TCP/IP学习笔记（3）">
-                TCP/IP学习笔记（3） <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/27/TCP_IP学习笔记（1）/" rel="prev" title="TCP/IP学习笔记（1）">
+                TCP/IP学习笔记（1） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -487,7 +487,7 @@
 
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image" src="/images/avatar.jpeg" alt="Vincent">
             
@@ -502,7 +502,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -524,7 +524,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
